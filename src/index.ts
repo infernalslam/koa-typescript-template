@@ -3,8 +3,9 @@ import * as Koa from 'koa'
 import * as bodyParser from 'koa-bodyparser'
 import {router} from './routes'
 const app = new Koa()
+const port: number = 8080
 app.use(bodyParser())
 app.use(router.routes())
-app.listen(30001, ()=> {
-    console.log('>>| Listen on 30001')
+app.listen(port, ()=> {
+    console.log(`>>| Listen on ${port}`)
 })
